@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>This is the index page that is going to show the list of tasks...</p>
+
+    <header>
+        <input id="input-task" data-href="{{url_for('user.task_new') }}"
+               type="text" placeholder="what needs to be done? " autocomplete="off" autofocus required>
+    </header>
+
+
+
+    <div>
+        All:<div id="count-all">{{all_count}}</div>
+    </div>
+    <div>
+        Active:<div id="count-active">{{active_count}}</div>
+    </div>
+    <div>
+        Completed:<div id="count-completed">{{completed_count}}</div>
+    </div>
+
+    <div class="tasks">
+        {% for task in tasks %}
+            {% include '_task.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}

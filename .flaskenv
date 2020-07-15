@@ -1,0 +1,2 @@
+FLASK_APP=to_do_list
+FLASK_ENV=development

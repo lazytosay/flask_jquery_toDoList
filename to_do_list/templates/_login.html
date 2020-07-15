@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Login/Register</h2>
+    <div class="form-login">
+        <input class="validate input-login" id="input-username" name="username" type="text" placeholder="your username"
+               autofocus required>
+
+        <input class="validate input-login" id="input-password" name="password" type="password" placeholder="your password"
+               required>
+
+        <button id="btn-register">Get Test Account</button>
+        <button id="btn-login">Login</button>
+        <button id="btn-toggle-password">Toggle Password</button>
+    </div>
+
+{% endblock %}

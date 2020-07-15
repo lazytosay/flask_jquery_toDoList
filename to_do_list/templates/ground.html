@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill's To Do List</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='open-iconic-master/font/css/open-iconic-bootstrap.css') }}">
+</head>
+
+<body>
+    <h1 class="oi oi-shield">This text comes from ground.html </h1>
+
+    <nav>This is the navigation bar...</nav>
+    <a href="#intro">Intro</a>
+    <a href="#index">Index</a>
+    <a href="#login">login</a>
+    <hr>
+
+    <div id="main"> </div>
+
+    <script type="text/javascript">
+        var csrf_token = "{{csrf_token() }}";
+        var intro_page_url = "{{url_for('user.intro') }}";
+        var index_page_url = "{{url_for('user.index') }}";
+        var task_new_url = "{{url_for('user.task_new') }}";
+        var login_url = "{{url_for('auth.login') }}";
+        var register_url = "{{url_for('auth.register') }}";
+    </script>
+
+</body>
+
+</html>

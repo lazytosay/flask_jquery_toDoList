@@ -1,0 +1,13 @@
+<div class="task" data-done={{task.done|tojson}} data-href="{{url_for('user.task_edit', task_id=task.id) }}"
+    data-id="{{task.id}}" data-body="{{task.body}}">
+    <div id="body{{task.id}}" class="{%if task.done %}task-done{%else%}task-not-done{% endif %}">
+        {{task.body}}
+    </div>
+    <span>
+        <input type="checkbox" class="checkbox-task"  data-href="{{url_for('user.task_toggle', task_id=task.id) }}" {%if task.done %}checked{% endif %}>
+    </span>
+    <span class="hide task-edit">
+        <a class="oi oi-circle-x btn-delete float-right" data-href="{{url_for('user.task_delete', task_id=task.id) }}"></a>
+        <a class="oi oi-pencil btn-edit" data-href="{{url_for('user.task_edit', task_id=task.id) }}"></a>
+    </span>
+</div>
